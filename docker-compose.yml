@@ -1,17 +1,3 @@
-#version: "3"
-#services:
-#
-#  db:
-#    image: postgres:9.6
-#    container_name: wow-consumables-calculator-postgres
-#    ports:
-#      - "5432:5432"
-#    environment:
-#      - POSTGRES_USER=postgres
-#      - POSTGRES_PASSWORD=postgres
-#    volumes:
-#      - ~/Projects/DockerCache/WoW-Consumables-Calculator/:/var/lib/postgresql/data
-
 ###############################################################################
 #                          Generated on phpdocker.io                          #
 ###############################################################################
@@ -28,6 +14,8 @@ services:
     - POSTGRES_USER=postgres
     - POSTGRES_PASSWORD=postgres
     - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
 
   webserver:
     image: nginx:alpine
