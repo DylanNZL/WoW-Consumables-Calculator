@@ -109,7 +109,7 @@ class AuctionHouseHistory extends Database
     }
 
     /**
-     * @param $auctions
+     * @param integer $auctions
      * @return AuctionHouseHistory
      *
      * constructs an AuctionHouseHistory object with the provided number of auctions
