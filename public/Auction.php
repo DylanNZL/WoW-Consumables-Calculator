@@ -298,7 +298,7 @@ class Auction extends Database
             . $this->getTimeLeft() . ");";
         $result = pg_query($this->db, $query);
 
-        if (!result) {
+        if (!$result) {
             // error saving data
             return false;
         } else {
