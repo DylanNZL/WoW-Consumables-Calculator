@@ -6,4 +6,9 @@
  * Time: 4:20 PM
  */
 
-echo "hello";
+require("Database.php");
+
+$database = new Database();
+
+
+echo "\n";
