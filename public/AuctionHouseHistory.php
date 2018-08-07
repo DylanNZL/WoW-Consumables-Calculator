@@ -11,22 +11,22 @@ class AuctionHouseHistory extends Database
     /**
      * @var integer id
      */
-    private $id;
+    private $_id;
 
     /**
      * @var integer auctions
      */
-    private $auctions;
+    private $_auctions;
 
     /**
      * @var timestamptz record created
      */
-    private $created_at;
+    private $_created_at;
 
     /**
      * @var timestamptz record last updated
      */
-    private $updated_at;
+    private $_updated_at;
 
     /*
      * =========================================================
@@ -39,7 +39,7 @@ class AuctionHouseHistory extends Database
      */
     public function getId(): int
     {
-        return $this->id;
+        return $this->_id;
     }
 
     /**
@@ -47,7 +47,7 @@ class AuctionHouseHistory extends Database
      */
     public function setId(int $id)
     {
-        $this->id = $id;
+        $this->_id = $id;
     }
 
     /**
@@ -55,7 +55,7 @@ class AuctionHouseHistory extends Database
      */
     public function getAuctions(): int
     {
-        return $this->auctions;
+        return $this->_auctions;
     }
 
     /**
@@ -63,7 +63,7 @@ class AuctionHouseHistory extends Database
      */
     public function setAuctions(int $auctions)
     {
-        $this->auctions = $auctions;
+        $this->_auctions = $auctions;
     }
 
     /**
@@ -71,7 +71,7 @@ class AuctionHouseHistory extends Database
      */
     public function getCreatedAt(): timestamptz
     {
-        return $this->created_at;
+        return $this->_created_at;
     }
 
     /**
@@ -79,7 +79,7 @@ class AuctionHouseHistory extends Database
      */
     public function setCreatedAt(timestamptz $created_at)
     {
-        $this->created_at = $created_at;
+        $this->_created_at = $created_at;
     }
 
     /**
@@ -87,7 +87,7 @@ class AuctionHouseHistory extends Database
      */
     public function getUpdatedAt(): timestamptz
     {
-        return $this->updated_at;
+        return $this->_updated_at;
     }
 
     /**
@@ -95,7 +95,7 @@ class AuctionHouseHistory extends Database
      */
     public function setUpdatedAt(timestamptz $updated_at)
     {
-        $this->updated_at = $updated_at;
+        $this->_updated_at = $updated_at;
     }
 
     /*
