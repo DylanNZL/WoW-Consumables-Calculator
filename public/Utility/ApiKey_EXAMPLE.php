@@ -16,9 +16,9 @@
  */
 class ApiKey_EXAMPLE
 {
-    private static const KEY = "ENTER_YOUR_KEY_HERE";
+    private static $key = "ENTER_YOUR_KEY_HERE";
 
     public static function getKey() {
-        return self::KEY;
+        return self::$key;
     }
 }

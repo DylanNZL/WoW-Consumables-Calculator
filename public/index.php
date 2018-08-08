@@ -6,9 +6,16 @@
  * Time: 4:20 PM
  */
 
-require("./Model/Database.php");
+//require("./Model/Database.php");
+//
+//$database = new Database();
+require('BlizzardAPI.php');
 
-$database = new Database();
+$apiCall = new BlizzardAPI();
+
+$apiCall->callAPI();
+$apiCall->printAPI();
+
 
 
 echo "\n";
