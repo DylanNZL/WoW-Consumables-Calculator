@@ -296,7 +296,7 @@ class Auction extends Database
             . $this->getItem() . ", " . $this->getOwner() . ", " . $this->getOwnerRealm() . ", "
             . $this->getBid() . ", " . $this->getBuyout() . ", " . $this->getQuantity() . ", "
             . $this->getTimeLeft() . ");";
-        $result = pg_query($this->db, $query);
+        $result = pg_query(parent::$db, $query);
 
         if (!$result) {
             // error saving data

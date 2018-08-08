@@ -6,7 +6,7 @@
  * Time: 4:20 PM
  */
 
-require("Database.php");
+require("./Model/Database.php");
 
 $database = new Database();
 

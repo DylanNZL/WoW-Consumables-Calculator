@@ -8,7 +8,7 @@
 
 class Database
 {
-    protected $db; // Database connection
+    public static $db = null; // Database connection
 
     // TODO: take input for these variables from a file, allowing this to be anonymised for github when it is running on a server
     // currently set to docker details
@@ -20,19 +20,21 @@ class Database
 
     function __construct()
     {
-        $connString = "host=". Database::DB_HOST . " port=" . Database::DB_PORT . " dbname=" . Database::DB_NAME
-            . " user=" . Database::DB_USER . " password=" . Database::DB_PASS;
-//        $connString = "host=localhost port=5432 user=postgres password=postgres";
-        echo $connString;
-        echo "<br/> \n";
+        // Initialise the database connection once
+        if ($this::$db == null) {
+            $connString = "host=" . Database::DB_HOST . " port=" . Database::DB_PORT . " dbname=" . Database::DB_NAME
+                . " user=" . Database::DB_USER . " password=" . Database::DB_PASS;
+            echo $connString;
+            echo "<br/> \n";
 
-        $this->db = pg_connect("host=wow-consumables-calculator-postgres port=5432 user=postgres password=postgres") or die("Unable to connect to database");
+            $this::$db = pg_connect("host=wow-consumables-calculator-postgres port=5432 user=postgres password=postgres") or die("Unable to connect to database");
 
-        // Check we connected to database
-        if (!$this->db) {
-            // TODO: throw exception?
-        } else {
-            $this->loadTables();
+            // Check we connected to database
+            if (!$this::$db) {
+                // TODO: throw exception?
+            } else {
+                $this->loadTables();
+            }
         }
     }
 
@@ -94,7 +96,7 @@ class Database
 
         $sql = $auctionsSQL . $ahHistorySQL . $itemCacheSQL . $timestampFunction . $preItemCacheTrigger . $itemCacheTrigger;
 
-        $result = pg_query($this->db, $sql);
+        $result = pg_query($this::$db, $sql);
 
         if (!$result) {
             exit("Error creating tables");

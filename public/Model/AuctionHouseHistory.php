@@ -125,7 +125,7 @@ class AuctionHouseHistory extends Database
     public function save() {
         $query = "INSERT INTO ah_history VALUES (". $this->getAuctions().");";
 
-        $result = pg_query($this->db, $query);
+        $result = pg_query(parent::$db, $query);
 
         if (!$result) {
             // error

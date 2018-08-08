@@ -221,7 +221,7 @@ class ItemCache extends Database
             $this->getQuantity(). ", " . $this->getAverageBuyout(). ", " . $this->getMinBuyout(). ", " .
             $this->getMaxBuyout(). ");";
 
-        $result = pg_query($this->db, $query);
+        $result = pg_query(parent::$db, $query);
 
         if (!$result) {
             // error
